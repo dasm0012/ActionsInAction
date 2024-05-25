@@ -4,6 +4,7 @@ on:
   push:
     branches: 
       - main
+    
   workflow_dispatch:
     inputs:
       logLevel:
@@ -41,4 +42,5 @@ jobs:
           echo "Log level: ${{ inputs.logLevel }}"
           echo "Tags: ${{ inputs.tags }}"
           echo "Environment: ${{ inputs.environment }}"
+        if: S{{ github.event_name == 'workflow_dispatch'
       
