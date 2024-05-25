@@ -26,6 +26,13 @@ on:
         required: true
     
 jobs:
+  TryingPerl:
+    runs-on: ubuntu-latest
+
+    steps:
+      - shell: perl {0}
+        run: print %ENV
+
   MyFirstJob:
     runs-on: ubuntu-latest
     
