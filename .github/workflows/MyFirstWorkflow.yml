@@ -27,6 +27,10 @@ on:
     
 jobs:
   TryingPerl:
+    strategy:
+      matrix:
+        node_version: [12, 14, 16]
+        
     runs-on: ubuntu-latest
 
     steps:
@@ -44,6 +48,9 @@ jobs:
         run: |
           echo "The repository ${{github.repository}} contains the following files:"
           tree
+      - name: Print matrix entry
+        run: |
+          echo "Node version is ${{ matrix.node_version }}
       - name: Print the inputs
         run: |
           echo "Log level: ${{ inputs.logLevel }}"
