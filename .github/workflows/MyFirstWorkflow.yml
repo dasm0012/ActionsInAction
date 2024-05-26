@@ -26,19 +26,17 @@ on:
         required: true
     
 jobs:
-  TryingPerl:
-    strategy:
-      matrix:
-        node_version: [12, 14, 16]
-        
+  TryingPerl:       
     runs-on: ubuntu-latest
-
     steps:
       - shell: perl {0}
         run: print %ENV
 
   MyFirstJob:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node_version: [12, 14, 16]
     
     steps:
       - run: echo "👋 Hello World!"
