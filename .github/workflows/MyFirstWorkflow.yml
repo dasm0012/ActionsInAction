@@ -50,7 +50,7 @@ jobs:
           tree
       - name: Print matrix entry
         run: |
-          echo "Node version is ${{ matrix.node_version }}
+          echo "Node version is ${{ matrix.node_version }}"
       - name: Print the inputs
         run: |
           echo "Log level: ${{ inputs.logLevel }}"
