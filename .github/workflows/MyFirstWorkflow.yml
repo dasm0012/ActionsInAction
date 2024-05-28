@@ -1,13 +1,12 @@
 name: My First Workflow
 
+permissions: 
+  contents: none
+  
 on:
   push:
     branches: 
       - main
-
-permissions: 
-  contents: none
-  
     
   workflow_dispatch:
     inputs:
